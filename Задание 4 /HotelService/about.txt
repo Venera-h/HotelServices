@@ -1,0 +1,13 @@
+Order Service (Сервис заказов): Создает первичную запись.
+
+Hotel Service (Сервис отелей): Резервирует номер.
+
+Payment Service (Сервис оплаты): Списывает средства.
+
+OrderService создает заказ и публикует событие OrderCreated.
+
+HotelService ловит OrderCreated, блокирует номер и публикует HotelReserved.
+
+PaymentService ловит HotelReserved, списывает деньги и публикует PaymentSuccessful.
+
+OrderService ловит PaymentSuccessful и меняет статус заказа на Confirmed.
